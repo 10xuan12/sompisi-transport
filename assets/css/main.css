@@ -1,0 +1,222 @@
+/* Google Fonts are loaded via <link> tags in nuxt.config.ts (app.head),
+   not @import here — @import blocks the browser preloader from discovering
+   the font request early, which costs LCP time. */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* Signature motion curve — crisp deceleration, zero overshoot. Used by
+       every hand-written transition/animation below; Tailwind's transition-*
+       utilities pick up the same curve via transitionTimingFunction.DEFAULT
+       in tailwind.config.ts, so the whole site moves with one consistent,
+       non-bouncy feel. */
+    --ease-crisp: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  body {
+    @apply bg-mist-100 text-ink-900 font-body antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display tracking-tight text-ink-800;
+  }
+}
+
+@layer components {
+  /* Perforated "ticket stub" edge, used to tie the site back to the
+     travel-document visual motif without relying on stock icon sets. */
+  .ticket-notch::before,
+  .ticket-notch::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: theme('colors.mist.100');
+    border-radius: 9999px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .ticket-notch::before {
+    left: -10px;
+  }
+  .ticket-notch::after {
+    right: -10px;
+  }
+
+  .section-heading {
+    @apply text-xs font-mono uppercase tracking-[0.2em] text-amber-500;
+  }
+
+  /* Scroll-reveal, driven by the v-reveal directive (plugins/reveal.client.ts).
+     Elements only get `.reveal` once JS decides to animate them, so this
+     never hides content when JS is unavailable. */
+  .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.6s var(--ease-crisp), transform 0.6s var(--ease-crisp);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+  .reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* SVG "draw-on" line, used by hero/trust illustrations and the
+     How It Works connector. Runs once, either on mount (hero) or once
+     `.reveal-visible` lands on an ancestor (scroll-triggered). No
+     overshoot — the line arrives and stops, it doesn't bounce past 100%. */
+  .draw-path {
+    stroke-dasharray: var(--draw-length, 400);
+    stroke-dashoffset: var(--draw-length, 400);
+  }
+  .draw-path-auto {
+    animation: draw-path 2.2s var(--ease-crisp) 0.2s forwards;
+  }
+  .reveal-visible .draw-path-onreveal {
+    animation: draw-path 1.2s var(--ease-crisp) forwards;
+  }
+  @keyframes draw-path {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  /* Soft "breathing" pulse for the floating WhatsApp button — a quiet,
+     restrained nudge that it's clickable, not a cheerful bounce. Amplitude
+     is intentionally small and the curve never overshoots the target scale.
+     Ring color is the amber accent, doing double duty as the button's glow. */
+  .whatsapp-breathe {
+    animation: whatsapp-breathe 3.2s ease-in-out infinite;
+  }
+  @keyframes whatsapp-breathe {
+    0%, 100% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 rgba(217, 125, 60, 0.4);
+    }
+    50% {
+      transform: scale(1.03);
+      box-shadow: 0 0 0 9px rgba(217, 125, 60, 0);
+    }
+  }
+
+  /* Resting amber glow for filled accent CTAs (primary Hero button, booking
+     form submit). A soft warm halo rather than a hard drop shadow — reads
+     as "this is the one to press," especially on darker surfaces nearby. */
+  .glow-amber {
+    box-shadow: 0 0 0 1px rgba(217, 125, 60, 0.15), 0 6px 20px -4px rgba(217, 125, 60, 0.45);
+  }
+  .glow-amber:hover {
+    box-shadow: 0 0 0 1px rgba(217, 125, 60, 0.22), 0 10px 28px -4px rgba(217, 125, 60, 0.55);
+  }
+
+  /* Fine grid texture for large dark surfaces (Book section, Footer) so
+     they don't read as flat color blocks. Pure CSS gradients — no image
+     request, negligible paint cost. Scoped to a pseudo-element so it never
+     touches the DOM or the section's own children. */
+  .texture-grid {
+    position: relative;
+  }
+  .texture-grid::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-image:
+      repeating-linear-gradient(0deg, rgba(250, 250, 249, 0.05) 0, rgba(250, 250, 249, 0.05) 1px, transparent 1px, transparent 44px),
+      repeating-linear-gradient(90deg, rgba(250, 250, 249, 0.05) 0, rgba(250, 250, 249, 0.05) 1px, transparent 1px, transparent 44px);
+  }
+  .texture-grid > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Small pulsing status dot, used next to decorative mono tags like
+     "Available on WhatsApp". Opacity-only, no scale — cheapest possible
+     ambient motion. */
+  .status-dot {
+    animation: status-pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes status-pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.35;
+    }
+  }
+
+  /* Mobile nav panel enter/leave (components/AppHeader.vue). Same crisp
+     curve as everything else, no overshoot. */
+  .mobile-menu-transition {
+    transition: opacity 0.25s var(--ease-crisp), transform 0.25s var(--ease-crisp);
+  }
+  .mobile-menu-hidden {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+
+  /* First-visit loading screen (components/LoadingScreen.client.vue). Line
+     draws once, the vehicle mark travels with it, both settle — no loop,
+     no overshoot. The repeat-visit case is handled entirely in that
+     component (a sessionStorage check before first paint), not here — this
+     .no-loading hook is unused today but kept as a low-cost escape hatch
+     if a future SSR-rendered variant of the screen needs one. */
+  html.no-loading #loading-screen {
+    display: none !important;
+  }
+  .loading-draw {
+    animation: loading-draw 1.1s var(--ease-crisp) 0.15s forwards;
+  }
+  @keyframes loading-draw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  .loading-mark {
+    animation: loading-mark-move 1.1s var(--ease-crisp) 0.15s forwards;
+  }
+  @keyframes loading-mark-move {
+    from {
+      transform: translate(20px, 92px) rotate(-22deg);
+    }
+    to {
+      transform: translate(200px, 20px) rotate(-22deg);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .draw-path,
+  .draw-path-auto,
+  .reveal-visible .draw-path-onreveal {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+  .status-dot {
+    animation: none;
+  }
+  .whatsapp-breathe {
+    animation: none;
+  }
+  .mobile-menu-transition {
+    transition: none;
+  }
+  .loading-draw {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+  .loading-mark {
+    animation: none;
+    transform: translate(200px, 20px) rotate(-22deg);
+  }
+}

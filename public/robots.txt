@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# TODO: 確認正式網域後這行會由 @nuxtjs/sitemap 依 nuxt.config.ts 的 site.url 自動產生對應網址
+Sitemap: https://sompisitransport.example/sitemap.xml
