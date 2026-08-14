@@ -107,10 +107,10 @@
      form submit). A soft warm halo rather than a hard drop shadow — reads
      as "this is the one to press," especially on darker surfaces nearby. */
   .glow-amber {
-    box-shadow: 0 0 0 1px rgba(217, 125, 60, 0.15), 0 6px 20px -4px rgba(217, 125, 60, 0.45);
+    box-shadow: 0 0 0 1px rgba(217, 125, 60, 0.18), 0 8px 26px -4px rgba(217, 125, 60, 0.55);
   }
   .glow-amber:hover {
-    box-shadow: 0 0 0 1px rgba(217, 125, 60, 0.22), 0 10px 28px -4px rgba(217, 125, 60, 0.55);
+    box-shadow: 0 0 0 1px rgba(217, 125, 60, 0.25), 0 12px 32px -4px rgba(217, 125, 60, 0.62);
   }
 
   /* Fine grid texture for large dark surfaces (Book section, Footer) so

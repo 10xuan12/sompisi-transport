@@ -88,10 +88,10 @@ const trustPoints = [
             Available on WhatsApp
           </div>
 
-          <div class="mt-4 flex flex-wrap gap-3">
+          <div class="mt-7 flex flex-wrap items-center gap-4">
             <a
               href="#book"
-              class="glow-amber inline-flex items-center justify-center rounded-full border border-ink-900/10 bg-amber-500 px-6 py-3.5 font-bold text-ink-900 transition hover:bg-amber-600"
+              class="glow-amber inline-flex items-center justify-center rounded-full border border-ink-900/15 bg-amber-500 px-7 py-4 text-base font-bold text-ink-900 transition hover:bg-amber-600 sm:text-lg"
             >
               Request a ride
             </a>
