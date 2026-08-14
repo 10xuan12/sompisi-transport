@@ -131,16 +131,16 @@ onMounted(async () => {
       <defs>
         <!-- Subtle duotone fills — same shapes, gentler than flat colour. -->
         <linearGradient id="hero-sky" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#CFD2D6" />
-          <stop offset="100%" stop-color="#A9AEB5" />
+          <stop offset="0%" stop-color="#D0D1D3" />
+          <stop offset="100%" stop-color="#ABADAF" />
         </linearGradient>
         <linearGradient id="hero-road" x1="0" y1="1" x2="1" y2="0">
-          <stop offset="0%" stop-color="#262A30" />
-          <stop offset="100%" stop-color="#101216" />
+          <stop offset="0%" stop-color="#21252C" />
+          <stop offset="100%" stop-color="#0C0F13" />
         </linearGradient>
         <linearGradient id="hero-car" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#262A30" />
-          <stop offset="100%" stop-color="#101216" />
+          <stop offset="0%" stop-color="#21252C" />
+          <stop offset="100%" stop-color="#0C0F13" />
         </linearGradient>
       </defs>
 
@@ -158,7 +158,7 @@ onMounted(async () => {
       </g>
 
       <!-- distant waypoint marker: a plain ring, not a cartoon sun -->
-      <circle ref="waypointRing" cx="404" cy="70" r="16" fill="none" stroke="#D97D3C" stroke-width="2.5" />
+      <circle ref="waypointRing" cx="404" cy="70" r="16" fill="none" stroke="#A13A3A" stroke-width="2.5" />
 
       <!-- road bed, a single precise diagonal — not a winding curve -->
       <path d="M -20 340 L 500 60" fill="none" stroke="url(#hero-road)" stroke-width="26" stroke-linecap="butt" />
@@ -172,7 +172,7 @@ onMounted(async () => {
         style="--draw-length: 620"
         d="M -20 340 L 500 60"
         fill="none"
-        stroke="#D97D3C"
+        stroke="#A13A3A"
         stroke-width="3"
         stroke-linecap="butt"
         stroke-dasharray="18 14"
@@ -187,11 +187,11 @@ onMounted(async () => {
             d="M -46,10 L -46,-2 L -24,-18 L 12,-18 L 30,-2 L 45,3 L 47,10 Z"
             fill="url(#hero-car)"
           />
-          <path d="M -21,-15 L 11,-15 L 23,-3 L -23,-3 Z" fill="#3A3E45" />
-          <circle cx="-27" cy="11" r="9" fill="#101216" />
-          <circle cx="-27" cy="11" r="3" fill="#D97D3C" />
-          <circle cx="27" cy="11" r="9" fill="#101216" />
-          <circle cx="27" cy="11" r="3" fill="#D97D3C" />
+          <path d="M -21,-15 L 11,-15 L 23,-3 L -23,-3 Z" fill="#363A40" />
+          <circle cx="-27" cy="11" r="9" fill="#0C0F13" />
+          <circle cx="-27" cy="11" r="3" fill="#A13A3A" />
+          <circle cx="27" cy="11" r="9" fill="#0C0F13" />
+          <circle cx="27" cy="11" r="3" fill="#A13A3A" />
         </g>
       </g>
     </svg>

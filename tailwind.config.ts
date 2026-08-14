@@ -10,32 +10,36 @@ export default <Partial<Config>>{
   theme: {
     extend: {
       colors: {
-        // Professional chauffeur-service palette: one dark neutral base,
-        // one warm accent, one low-saturation light neutral. Deliberately
+        // Professional chauffeur-service palette (Plan B): one dark neutral
+        // base, one accent, one low-saturation light neutral. Deliberately
         // NOT a multi-hue "friendly illustration" palette.
         ink: {
-          50: '#F5F6F7',
-          100: '#E8E9EB',
-          200: '#CFD2D6',
-          300: '#A9AEB5',
-          400: '#7B818A',
-          500: '#565B63',
-          600: '#3A3E45',
-          700: '#262A30',
-          800: '#1A1D23', // primary dark base
-          900: '#101216'
+          50: '#F6F6F6',
+          100: '#E8E9E9',
+          200: '#D0D1D3',
+          300: '#ABADAF',
+          400: '#7D7F83',
+          500: '#55585D',
+          600: '#363A40',
+          700: '#21252C',
+          800: '#14181F', // primary dark base
+          900: '#0C0F13'
         },
-        amber: {
-          50: '#FCF1E7',
-          100: '#F7DCC0',
-          200: '#EFBD8C',
-          300: '#E7A066',
-          400: '#E08B4C',
-          500: '#D97D3C', // single accent — used everywhere a highlight color is needed
-          600: '#B8632A',
-          700: '#8F4C21',
-          800: '#693819',
-          900: '#452510'
+        // Brightened red-brown accent, replaces the earlier amber. Named
+        // "garnet" rather than keeping the old "amber" key — the hue moved
+        // far enough that the old name would actively mislead anyone
+        // reading a class like bg-amber-500 and seeing a red-brown swatch.
+        garnet: {
+          50: '#F5EBEB',
+          100: '#E6CACA',
+          200: '#CF9B9B',
+          300: '#BC7272',
+          400: '#AD5353',
+          500: '#A13A3A', // single accent — used everywhere a highlight color is needed
+          600: '#7E2D2D',
+          700: '#622323',
+          800: '#481A1A',
+          900: '#2F1111'
         },
         mist: {
           50: '#FAFAF9',
@@ -61,9 +65,9 @@ export default <Partial<Config>>{
       boxShadow: {
         // Layered "resting" shadow for light cards — a tight contact
         // shadow plus a soft ambient one, instead of one flat blur.
-        card: '0 1px 2px rgba(16,18,22,0.05), 0 2px 6px -2px rgba(16,18,22,0.08), 0 12px 28px -10px rgba(16,18,22,0.14)',
-        'card-hover': '0 1px 2px rgba(16,18,22,0.06), 0 4px 10px -2px rgba(16,18,22,0.1), 0 20px 40px -12px rgba(16,18,22,0.2)',
-        'card-lg': '0 2px 4px rgba(16,18,22,0.05), 0 8px 16px -4px rgba(16,18,22,0.1), 0 24px 48px -16px rgba(16,18,22,0.18)'
+        card: '0 1px 2px rgba(12,15,19,0.05), 0 2px 6px -2px rgba(12,15,19,0.08), 0 12px 28px -10px rgba(12,15,19,0.14)',
+        'card-hover': '0 1px 2px rgba(12,15,19,0.06), 0 4px 10px -2px rgba(12,15,19,0.1), 0 20px 40px -12px rgba(12,15,19,0.2)',
+        'card-lg': '0 2px 4px rgba(12,15,19,0.05), 0 8px 16px -4px rgba(12,15,19,0.1), 0 24px 48px -16px rgba(12,15,19,0.18)'
       },
       transitionTimingFunction: {
         // Crisp, no-overshoot motion signature. Overriding DEFAULT means

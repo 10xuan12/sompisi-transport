@@ -17,7 +17,7 @@ defineProps<{
     class="group relative flex flex-col overflow-hidden rounded-2xl border border-ink-800/15 bg-mist-50 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover sm:flex-row"
   >
     <div
-      class="flex shrink-0 flex-row items-center gap-3 bg-ink-800 px-5 py-4 text-mist-50 transition-colors duration-300 group-hover:bg-amber-500 sm:w-40 sm:flex-col sm:items-start sm:justify-center sm:gap-1 sm:py-6"
+      class="flex shrink-0 flex-row items-center gap-3 bg-ink-800 px-5 py-4 text-mist-50 transition-colors duration-300 group-hover:bg-garnet-500 sm:w-40 sm:flex-col sm:items-start sm:justify-center sm:gap-1 sm:py-6"
     >
       <span class="font-mono text-xs uppercase tracking-widest text-mist-200/80">Service</span>
       <span class="font-display text-3xl font-bold leading-none transition-transform duration-300 group-hover:scale-110">
@@ -40,7 +40,7 @@ defineProps<{
           :key="feature"
           class="flex items-center gap-1.5 text-sm text-ink-800"
         >
-          <span class="h-1.5 w-1.5 shrink-0 rounded-full bg-amber-500" />
+          <span class="h-1.5 w-1.5 shrink-0 rounded-full bg-garnet-500" />
           {{ feature }}
         </li>
       </ul>

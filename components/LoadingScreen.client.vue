@@ -61,11 +61,11 @@ onMounted(() => {
     aria-hidden="true"
   >
     <svg viewBox="0 0 220 112" class="h-20 w-40" fill="none">
-      <path d="M20,92 L200,20" stroke="#3A3E45" stroke-width="3" stroke-linecap="square" />
+      <path d="M20,92 L200,20" stroke="#363A40" stroke-width="3" stroke-linecap="square" />
       <path
         class="loading-draw"
         d="M20,92 L200,20"
-        stroke="#D97D3C"
+        stroke="#A13A3A"
         stroke-width="3"
         stroke-linecap="square"
         stroke-dasharray="200"

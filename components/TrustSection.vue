@@ -31,13 +31,13 @@ withDefaults(
 
       <dl class="grid gap-x-8 gap-y-6 xs:grid-cols-1">
         <div v-for="(point, i) in points" :key="point.label" v-reveal="i * 100" class="flex gap-3">
-          <span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-amber-500" />
+          <span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-garnet-500" />
           <div>
             <dt class="flex flex-wrap items-center gap-2 font-display font-bold text-ink-800">
               {{ point.label }}
               <span
                 v-if="point.todo"
-                class="rounded-full bg-amber-100 px-2 py-0.5 font-mono text-[10px] font-bold uppercase tracking-wide text-amber-600"
+                class="rounded-full bg-garnet-100 px-2 py-0.5 font-mono text-[10px] font-bold uppercase tracking-wide text-garnet-600"
               >
                 TODO: confirm with client
               </span>

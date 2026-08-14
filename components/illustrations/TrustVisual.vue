@@ -20,12 +20,12 @@
     >
       <defs>
         <linearGradient id="trust-post" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#262A30" />
-          <stop offset="100%" stop-color="#101216" />
+          <stop offset="0%" stop-color="#21252C" />
+          <stop offset="100%" stop-color="#0C0F13" />
         </linearGradient>
         <linearGradient id="trust-marker" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#E08B4C" />
-          <stop offset="100%" stop-color="#B8632A" />
+          <stop offset="0%" stop-color="#AD5353" />
+          <stop offset="100%" stop-color="#7E2D2D" />
         </linearGradient>
       </defs>
 
@@ -39,12 +39,12 @@
         style="--draw-length: 520"
         d="M32,238 L112,238 L112,158 L224,158 L224,108 L336,108"
         fill="none"
-        stroke="#D97D3C"
+        stroke="#A13A3A"
         stroke-width="3"
         stroke-linecap="square"
         stroke-dasharray="14 10"
       />
-      <g fill="#D97D3C">
+      <g fill="#A13A3A">
         <circle cx="112" cy="238" r="4" />
         <circle cx="112" cy="158" r="4" />
         <circle cx="224" cy="158" r="4" />
@@ -53,14 +53,14 @@
 
       <!-- signpost -->
       <line x1="128" y1="260" x2="128" y2="96" stroke="url(#trust-post)" stroke-width="5" stroke-linecap="square" />
-      <g stroke="#101216" stroke-width="3" fill="#FAFAF9">
+      <g stroke="#0C0F13" stroke-width="3" fill="#FAFAF9">
         <path d="M128,106 h72 l14 15 -14 15 h-72 Z" />
         <path d="M128,144 h-56 l-14 13 14 13 h56 Z" />
       </g>
 
       <!-- route destination marker: a faceted diamond, not a rounded pin -->
       <path d="M336,84 L360,108 L336,132 L312,108 Z" fill="url(#trust-marker)" />
-      <path d="M336,98 L346,108 L336,118 L326,108 Z" fill="#101216" />
+      <path d="M336,98 L346,108 L336,118 L326,108 Z" fill="#0C0F13" />
     </svg>
   </div>
 </template>

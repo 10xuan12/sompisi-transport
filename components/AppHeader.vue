@@ -35,7 +35,7 @@ onUnmounted(() => window.removeEventListener('keydown', handleKeydown))
     <div class="relative mx-auto flex max-w-5xl items-center justify-between gap-3 px-4 py-3 sm:px-6">
       <a href="#top" class="flex items-baseline gap-2">
         <span class="font-display text-lg font-bold text-ink-800 sm:text-xl">{{ siteName }}</span>
-        <span class="hidden font-mono text-xs uppercase tracking-widest text-amber-500 sm:inline">
+        <span class="hidden font-mono text-xs uppercase tracking-widest text-garnet-500 sm:inline">
           {{ tagline }}
         </span>
       </a>
@@ -45,7 +45,7 @@ onUnmounted(() => window.removeEventListener('keydown', handleKeydown))
           v-for="link in navLinks"
           :key="link.href"
           :href="link.href"
-          class="font-body text-sm font-medium text-ink-800/80 transition-colors hover:text-amber-500"
+          class="font-body text-sm font-medium text-ink-800/80 transition-colors hover:text-garnet-500"
         >
           {{ link.label }}
         </a>
@@ -80,7 +80,7 @@ onUnmounted(() => window.removeEventListener('keydown', handleKeydown))
         </button>
       </div>
 
-      <!-- Mobile menu panel. Dark/amber to match the site's accent
+      <!-- Mobile menu panel. Dark/garnet to match the site's accent
            sections (footer, booking) rather than repeating the light
            header background — makes the open state feel deliberate. -->
       <Transition
@@ -98,7 +98,7 @@ onUnmounted(() => window.removeEventListener('keydown', handleKeydown))
             <li v-for="link in navLinks" :key="link.href">
               <a
                 :href="link.href"
-                class="block py-4 font-body text-base font-medium text-mist-50 transition-colors hover:text-amber-400"
+                class="block py-4 font-body text-base font-medium text-mist-50 transition-colors hover:text-garnet-400"
                 @click="closeMenu"
               >
                 {{ link.label }}

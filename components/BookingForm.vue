@@ -100,7 +100,7 @@ watch(
         type="text"
         required
         placeholder="e.g. Thandiwe Dlamini"
-        class="mt-1.5 w-full rounded-lg border border-ink-800/25 bg-mist-50 px-3 py-2.5 text-ink-900 placeholder:text-ink-900/40 focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500/30"
+        class="mt-1.5 w-full rounded-lg border border-ink-800/25 bg-mist-50 px-3 py-2.5 text-ink-900 placeholder:text-ink-900/40 focus:border-garnet-500 focus:outline-none focus:ring-2 focus:ring-garnet-500/30"
       />
     </div>
 
@@ -112,7 +112,7 @@ watch(
         id="serviceType"
         v-model="form.serviceType"
         required
-        class="mt-1.5 w-full rounded-lg border border-ink-800/25 bg-mist-50 px-3 py-2.5 text-ink-900 focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500/30"
+        class="mt-1.5 w-full rounded-lg border border-ink-800/25 bg-mist-50 px-3 py-2.5 text-ink-900 focus:border-garnet-500 focus:outline-none focus:ring-2 focus:ring-garnet-500/30"
       >
         <option value="" disabled>Select one…</option>
         <option v-for="option in SERVICE_TYPES" :key="option.value" :value="option.value">
@@ -132,7 +132,7 @@ watch(
         min="1"
         max="20"
         required
-        class="mt-1.5 w-full rounded-lg border border-ink-800/25 bg-mist-50 px-3 py-2.5 text-ink-900 focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500/30"
+        class="mt-1.5 w-full rounded-lg border border-ink-800/25 bg-mist-50 px-3 py-2.5 text-ink-900 focus:border-garnet-500 focus:outline-none focus:ring-2 focus:ring-garnet-500/30"
       />
     </div>
 
@@ -144,7 +144,7 @@ watch(
         type="text"
         required
         placeholder="e.g. Mbabane, Ezulwini, or hotel name"
-        class="mt-1.5 w-full rounded-lg border border-ink-800/25 bg-mist-50 px-3 py-2.5 text-ink-900 placeholder:text-ink-900/40 focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500/30"
+        class="mt-1.5 w-full rounded-lg border border-ink-800/25 bg-mist-50 px-3 py-2.5 text-ink-900 placeholder:text-ink-900/40 focus:border-garnet-500 focus:outline-none focus:ring-2 focus:ring-garnet-500/30"
       />
     </div>
 
@@ -155,7 +155,7 @@ watch(
         v-model="form.date"
         type="date"
         required
-        class="mt-1.5 w-full rounded-lg border border-ink-800/25 bg-mist-50 px-3 py-2.5 text-ink-900 focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500/30"
+        class="mt-1.5 w-full rounded-lg border border-ink-800/25 bg-mist-50 px-3 py-2.5 text-ink-900 focus:border-garnet-500 focus:outline-none focus:ring-2 focus:ring-garnet-500/30"
       />
     </div>
 
@@ -166,7 +166,7 @@ watch(
         v-model="form.time"
         type="time"
         required
-        class="mt-1.5 w-full rounded-lg border border-ink-800/25 bg-mist-50 px-3 py-2.5 text-ink-900 focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500/30"
+        class="mt-1.5 w-full rounded-lg border border-ink-800/25 bg-mist-50 px-3 py-2.5 text-ink-900 focus:border-garnet-500 focus:outline-none focus:ring-2 focus:ring-garnet-500/30"
       />
     </div>
 
@@ -178,7 +178,7 @@ watch(
         type="text"
         required
         placeholder="e.g. King Mswati III International Airport, or your hotel's name and area"
-        class="mt-1.5 w-full rounded-lg border border-ink-800/25 bg-mist-50 px-3 py-2.5 text-ink-900 placeholder:text-ink-900/40 focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500/30"
+        class="mt-1.5 w-full rounded-lg border border-ink-800/25 bg-mist-50 px-3 py-2.5 text-ink-900 placeholder:text-ink-900/40 focus:border-garnet-500 focus:outline-none focus:ring-2 focus:ring-garnet-500/30"
       />
     </div>
 
@@ -190,7 +190,7 @@ watch(
         type="text"
         required
         placeholder="e.g. Terminal 1 / Arrivals"
-        class="mt-1.5 w-full rounded-lg border border-ink-800/25 bg-mist-50 px-3 py-2.5 text-ink-900 placeholder:text-ink-900/40 focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500/30"
+        class="mt-1.5 w-full rounded-lg border border-ink-800/25 bg-mist-50 px-3 py-2.5 text-ink-900 placeholder:text-ink-900/40 focus:border-garnet-500 focus:outline-none focus:ring-2 focus:ring-garnet-500/30"
       />
     </div>
 
@@ -207,7 +207,7 @@ watch(
     <div class="sm:col-span-2">
       <button
         type="submit"
-        class="glow-amber inline-flex w-full items-center justify-center gap-2 rounded-full border border-ink-900/10 bg-amber-500 px-6 py-3.5 font-body text-base font-bold text-ink-900 transition hover:bg-amber-600 sm:w-auto"
+        class="glow-garnet inline-flex w-full items-center justify-center gap-2 rounded-full border border-ink-900/10 bg-garnet-500 px-6 py-3.5 font-body text-base font-bold text-mist-50 transition hover:bg-garnet-600 sm:w-auto"
       >
         Send to WhatsApp
       </button>

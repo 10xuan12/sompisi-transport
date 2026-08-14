@@ -84,14 +84,14 @@ const trustPoints = [
           </p>
 
           <div class="mt-5 inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.15em] text-ink-900/50">
-            <span class="status-dot h-1.5 w-1.5 rounded-full bg-amber-500" />
+            <span class="status-dot h-1.5 w-1.5 rounded-full bg-garnet-500" />
             Available on WhatsApp
           </div>
 
           <div class="mt-7 flex flex-wrap items-center gap-4">
             <a
               href="#book"
-              class="glow-amber inline-flex items-center justify-center rounded-full border border-ink-900/15 bg-amber-500 px-7 py-4 text-base font-bold text-ink-900 transition hover:bg-amber-600 sm:text-lg"
+              class="glow-garnet inline-flex items-center justify-center rounded-full border border-ink-900/15 bg-garnet-500 px-7 py-4 text-base font-bold text-mist-50 transition hover:bg-garnet-600 sm:text-lg"
             >
               Request a ride
             </a>
@@ -127,7 +127,7 @@ const trustPoints = [
 
           <div class="relative rounded-2xl border border-ink-800/15 bg-mist-50 p-5 shadow-card-lg">
             <div class="flex items-center justify-between border-b border-dashed border-ink-800/25 pb-3">
-              <span class="font-mono text-xs uppercase tracking-widest text-amber-500">Boarding</span>
+              <span class="font-mono text-xs uppercase tracking-widest text-garnet-500">Boarding</span>
               <span class="font-mono text-xs uppercase tracking-widest text-ink-800/60">Sompisi Transport</span>
             </div>
             <dl class="mt-4 grid grid-cols-2 gap-y-4 text-sm">
@@ -204,7 +204,7 @@ const trustPoints = [
     <!-- BOOKING FORM -->
     <section id="book" class="texture-grid bg-ink-900">
       <div class="mx-auto max-w-3xl px-4 py-14 sm:px-6 sm:py-20">
-        <p class="font-mono text-xs uppercase tracking-[0.2em] text-amber-400">Book a ride</p>
+        <p class="font-mono text-xs uppercase tracking-[0.2em] text-garnet-400">Book a ride</p>
         <h2 class="mt-2 text-2xl font-bold text-mist-50 sm:text-3xl">
           One Form, One WhatsApp Message
         </h2>

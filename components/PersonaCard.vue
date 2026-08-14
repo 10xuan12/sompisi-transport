@@ -21,14 +21,14 @@ defineProps<{
     </h3>
 
     <div class="flex gap-2">
-      <span class="mt-0.5 shrink-0 font-mono text-[11px] uppercase tracking-widest text-amber-500">
+      <span class="mt-0.5 shrink-0 font-mono text-[11px] uppercase tracking-widest text-garnet-500">
         Need
       </span>
       <p class="text-sm leading-relaxed text-ink-900/85">{{ need }}</p>
     </div>
 
     <div class="flex gap-2">
-      <span class="mt-0.5 shrink-0 font-mono text-[11px] uppercase tracking-widest text-amber-500">
+      <span class="mt-0.5 shrink-0 font-mono text-[11px] uppercase tracking-widest text-garnet-500">
         We offer
       </span>
       <p class="text-sm leading-relaxed text-ink-900/85">{{ solution }}</p>

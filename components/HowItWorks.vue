@@ -51,7 +51,7 @@ withDefaults(
           style="--draw-length: 900"
           d="M150,10 L750,10"
           fill="none"
-          stroke="#E7A066"
+          stroke="#BC7272"
           stroke-width="3"
           stroke-linecap="square"
           stroke-dasharray="2 14"
@@ -69,7 +69,7 @@ withDefaults(
         >
           <StepIcon :type="step.icon" />
         </div>
-        <span class="mt-3 font-mono text-xs uppercase tracking-widest text-amber-500">
+        <span class="mt-3 font-mono text-xs uppercase tracking-widest text-garnet-500">
           Step {{ i + 1 }}
         </span>
         <h3 class="mt-1 text-lg font-bold">{{ step.title }}</h3>
