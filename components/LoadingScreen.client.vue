@@ -19,6 +19,7 @@ const SAFETY_TIMEOUT_MS = 4000
 
 const visible = ref(true)
 const exiting = ref(false)
+const heroEntranceReady = useHeroEntranceGate()
 
 onMounted(() => {
   let alreadyShown = false
@@ -32,6 +33,7 @@ onMounted(() => {
 
   if (alreadyShown) {
     visible.value = false
+    heroEntranceReady.value = true // nothing was ever covering the Hero — let it animate right away
     return
   }
 
@@ -42,6 +44,7 @@ onMounted(() => {
     if (finished) return
     finished = true
     exiting.value = true
+    heroEntranceReady.value = true // start the Hero timeline as we begin fading, not after
     window.setTimeout(() => {
       visible.value = false
     }, FADE_MS)
