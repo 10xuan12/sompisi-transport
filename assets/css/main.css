@@ -160,12 +160,11 @@
     transform: translateY(-6px);
   }
 
-  /* First-visit loading screen (components/LoadingScreen.client.vue). Line
-     draws once, the vehicle mark travels with it, both settle — no loop,
-     no overshoot. The repeat-visit case is handled entirely in that
-     component (a sessionStorage check before first paint), not here — this
-     .no-loading hook is unused today but kept as a low-cost escape hatch
-     if a future SSR-rendered variant of the screen needs one. */
+  /* Loading screen (components/LoadingScreen.client.vue), shown on every
+     load/refresh. Line draws once, the vehicle mark travels with it, both
+     settle — no loop, no overshoot. This .no-loading hook is unused today
+     but kept as a low-cost escape hatch if a future SSR-rendered variant
+     of the screen ever needs a way to suppress it. */
   html.no-loading #loading-screen {
     display: none !important;
   }

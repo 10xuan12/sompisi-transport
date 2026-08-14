@@ -73,9 +73,9 @@ onMounted(async () => {
   const { createTimeline, createDrawable, stagger, cubicBezier } = mod
   const crispEase = cubicBezier(0.16, 1, 0.3, 1) // same signature curve as the rest of the site, no bounce/spring
 
-  // Don't start until the first-visit loading screen has begun fading (or
-  // immediately, if it never showed at all) — otherwise this whole
-  // sequence finishes underneath that opaque overlay and nobody sees it.
+  // Don't start until the loading screen (shown on every load/refresh) has
+  // begun fading — otherwise this whole sequence finishes underneath that
+  // opaque overlay and nobody sees it.
   const heroEntranceReady = useHeroEntranceGate()
   if (!heroEntranceReady.value) {
     await new Promise<void>((resolve) => {

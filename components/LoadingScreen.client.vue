@@ -1,18 +1,16 @@
 <script setup lang="ts">
 /**
- * First-visit brand loading screen. Pure SVG/CSS — no external image, so it
- * can never slow down the very load it's covering for.
+ * Brand loading screen. Pure SVG/CSS — no external image, so it can never
+ * slow down the very load it's covering for.
  *
  * `.client.vue` suffix: Nuxt never renders this during SSR/prerender, so a
  * user with JS disabled (or a crawler) simply sees the real static page
  * with no overlay and no way to get stuck behind one. Enhancement only.
  *
- * Shown once per browser session (sessionStorage), not on every reload or
- * in-site navigation. Stays up for a minimum "brand moment", but never
- * longer than actual load takes plus a small safety margin — see
- * MIN_DISPLAY_MS / SAFETY_TIMEOUT_MS below.
+ * Shown on every load/refresh (no sessionStorage gating). Stays up for a
+ * minimum "brand moment", but never longer than actual load takes plus a
+ * small safety margin — see MIN_DISPLAY_MS / SAFETY_TIMEOUT_MS below.
  */
-const STORAGE_KEY = 'spt-loading-shown'
 const MIN_DISPLAY_MS = 1500
 const FADE_MS = 500
 const SAFETY_TIMEOUT_MS = 4000
@@ -22,21 +20,6 @@ const exiting = ref(false)
 const heroEntranceReady = useHeroEntranceGate()
 
 onMounted(() => {
-  let alreadyShown = false
-  try {
-    alreadyShown = sessionStorage.getItem(STORAGE_KEY) === '1'
-  } catch {
-    // Storage unavailable (private browsing etc.) — fall back to always
-    // showing it; not worth failing the whole component over.
-    alreadyShown = false
-  }
-
-  if (alreadyShown) {
-    visible.value = false
-    heroEntranceReady.value = true // nothing was ever covering the Hero — let it animate right away
-    return
-  }
-
   const start = Date.now()
   let finished = false
 
@@ -48,11 +31,6 @@ onMounted(() => {
     window.setTimeout(() => {
       visible.value = false
     }, FADE_MS)
-    try {
-      sessionStorage.setItem(STORAGE_KEY, '1')
-    } catch {
-      /* ignore */
-    }
   }
 
   const afterMinDisplay = () => {
