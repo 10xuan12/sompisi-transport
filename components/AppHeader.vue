@@ -98,7 +98,7 @@ onUnmounted(() => window.removeEventListener('keydown', handleKeydown))
             <li v-for="link in navLinks" :key="link.href">
               <a
                 :href="link.href"
-                class="block py-4 font-body text-base font-medium text-mist-50 transition-colors hover:text-garnet-400"
+                class="block py-4 font-body text-base font-medium text-mist-50 transition-colors hover:text-garnet-300"
                 @click="closeMenu"
               >
                 {{ link.label }}
