@@ -207,7 +207,7 @@ watch(
     <div class="sm:col-span-2">
       <button
         type="submit"
-        class="glow-amber inline-flex w-full items-center justify-center gap-2 rounded-full bg-amber-500 px-6 py-3.5 font-body text-base font-bold text-mist-50 transition hover:bg-amber-600 sm:w-auto"
+        class="glow-amber inline-flex w-full items-center justify-center gap-2 rounded-full border border-ink-900/10 bg-amber-500 px-6 py-3.5 font-body text-base font-bold text-ink-900 transition hover:bg-amber-600 sm:w-auto"
       >
         Send to WhatsApp
       </button>

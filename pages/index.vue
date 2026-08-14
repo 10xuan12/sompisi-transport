@@ -91,7 +91,7 @@ const trustPoints = [
           <div class="mt-4 flex flex-wrap gap-3">
             <a
               href="#book"
-              class="glow-amber inline-flex items-center justify-center rounded-full bg-amber-500 px-6 py-3.5 font-bold text-mist-50 transition hover:bg-amber-600"
+              class="glow-amber inline-flex items-center justify-center rounded-full border border-ink-900/10 bg-amber-500 px-6 py-3.5 font-bold text-ink-900 transition hover:bg-amber-600"
             >
               Request a ride
             </a>
