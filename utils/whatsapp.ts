@@ -1,7 +1,6 @@
-// Intentional, not a stray test value: this is the owner's son's number,
-// used temporarily to receive bookings until a dedicated WhatsApp Business
-// number is set up. Swap it for that number when it exists — no rush.
-export const WHATSAPP_NUMBER = '+886 908 026 774'
+// Owner's (Sifiso W. Magagula) WhatsApp number — bookings and enquiries go
+// straight to him.
+export const WHATSAPP_NUMBER = '+268 7614 1460'
 
 /**
  * Builds a https://wa.me/... deep link that opens WhatsApp with a

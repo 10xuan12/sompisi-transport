@@ -1,112 +1,46 @@
 <script setup lang="ts">
+/**
+ * Sticky driver-identity header. Replaces the old site-nav header — this
+ * design has no separate nav menu, just the tab bar (TabBar.vue) rendered
+ * right below this.
+ */
 withDefaults(
   defineProps<{
-    siteName?: string
-    tagline?: string
-    navLinks?: { label: string; href: string }[]
+    driverName?: string
   }>(),
   {
-    siteName: 'Sompisi Transport',
-    tagline: 'Private transfers, Eswatini',
-    navLinks: () => [
-      { label: 'Services', href: '#services' },
-      { label: 'How It Works', href: '#how-it-works' },
-      { label: 'Contact', href: '#book' }
-    ]
+    driverName: 'Sifiso W. Magagula'
   }
 )
 
-const isMenuOpen = ref(false)
-
-function closeMenu() {
-  isMenuOpen.value = false
-}
-
-function handleKeydown(event: KeyboardEvent) {
-  if (event.key === 'Escape') closeMenu()
-}
-
-onMounted(() => window.addEventListener('keydown', handleKeydown))
-onUnmounted(() => window.removeEventListener('keydown', handleKeydown))
+const activeTab = useActiveTab()
 </script>
 
 <template>
-  <header class="sticky top-0 z-40 border-b border-ink-800/10 bg-mist-100/80 backdrop-blur-sm">
-    <div class="relative mx-auto flex max-w-5xl items-center justify-between gap-3 px-4 py-3 sm:px-6">
-      <a href="#top" class="flex items-baseline gap-2">
-        <span class="font-display text-lg font-bold text-ink-800 sm:text-xl">{{ siteName }}</span>
-        <span class="hidden font-mono text-xs uppercase tracking-widest text-garnet-500 sm:inline">
-          {{ tagline }}
-        </span>
-      </a>
+  <div class="sticky top-0 z-30 bg-navy px-6 pb-[26px] pt-9">
+    <p class="text-[10px] font-extrabold tracking-[0.22em] text-white/45">SOMPISI TRANSPORT</p>
 
-      <nav class="hidden items-center gap-5 md:flex">
-        <a
-          v-for="link in navLinks"
-          :key="link.href"
-          :href="link.href"
-          class="font-body text-sm font-medium text-ink-800/80 transition-colors hover:text-garnet-500"
-        >
-          {{ link.label }}
-        </a>
-      </nav>
-
-      <div class="flex items-center gap-2">
-        <WhatsAppButton variant="inline" label="WhatsApp" class="shrink-0" />
-
-        <!-- Hamburger toggle, mobile only. The three bars morph into an X
-             using the same crisp (no-bounce) transform timing as the rest
-             of the site — no extra easing rules needed. -->
-        <button
-          type="button"
-          class="relative z-50 flex h-10 w-10 shrink-0 flex-col items-center justify-center gap-1.5 md:hidden"
-          :aria-expanded="isMenuOpen"
-          aria-controls="mobile-menu"
-          :aria-label="isMenuOpen ? 'Close menu' : 'Open menu'"
-          @click="isMenuOpen = !isMenuOpen"
-        >
-          <span
-            class="block h-0.5 w-6 rounded-full bg-ink-800 transition-transform duration-300"
-            :class="isMenuOpen ? 'translate-y-2 rotate-45' : ''"
-          />
-          <span
-            class="block h-0.5 w-6 rounded-full bg-ink-800 transition-opacity duration-300"
-            :class="isMenuOpen ? 'opacity-0' : 'opacity-100'"
-          />
-          <span
-            class="block h-0.5 w-6 rounded-full bg-ink-800 transition-transform duration-300"
-            :class="isMenuOpen ? '-translate-y-2 -rotate-45' : ''"
-          />
-        </button>
-      </div>
-
-      <!-- Mobile menu panel. Dark/garnet to match the site's accent
-           sections (footer, booking) rather than repeating the light
-           header background — makes the open state feel deliberate. -->
-      <Transition
-        enter-active-class="mobile-menu-transition"
-        leave-active-class="mobile-menu-transition"
-        enter-from-class="mobile-menu-hidden"
-        leave-to-class="mobile-menu-hidden"
+    <div class="mt-[22px] flex items-center gap-4">
+      <div
+        class="flex h-[62px] w-[62px] shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#243e63] to-[#0d1b30] text-[8.5px] font-bold tracking-[0.08em] text-white/35"
       >
-        <nav
-          v-if="isMenuOpen"
-          id="mobile-menu"
-          class="absolute inset-x-0 top-full z-40 border-t border-ink-800/10 bg-ink-900 shadow-lg md:hidden"
-        >
-          <ul class="flex flex-col divide-y divide-mist-100/10 px-4">
-            <li v-for="link in navLinks" :key="link.href">
-              <a
-                :href="link.href"
-                class="block py-4 font-body text-base font-medium text-mist-50 transition-colors hover:text-garnet-300"
-                @click="closeMenu"
-              >
-                {{ link.label }}
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </Transition>
+        PHOTO
+      </div>
+      <div>
+        <p class="text-lg font-bold leading-tight text-white">{{ driverName }}</p>
+        <p class="mt-1 text-[12.5px] font-bold text-white/55">Owner · Private Driving Service</p>
+      </div>
     </div>
-  </header>
+
+    <div class="mt-6 flex gap-2.5">
+      <button
+        type="button"
+        class="flex-1 rounded-sm bg-burgundy px-4 py-3.5 text-xs font-extrabold tracking-wide text-white transition-opacity hover:opacity-90 active:scale-[0.98]"
+        @click="activeTab = 'book'"
+      >
+        REQUEST A RIDE
+      </button>
+      <WhatsAppButton variant="inline" label="WhatsApp" class="flex-1 justify-center" />
+    </div>
+  </div>
 </template>
