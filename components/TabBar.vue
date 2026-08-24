@@ -14,7 +14,7 @@ const activeTab = useActiveTab()
 </script>
 
 <template>
-  <div class="sticky top-[124px] z-20 flex border-b border-navy/10 bg-white">
+  <div class="flex border-b border-navy/10 bg-white">
     <button
       v-for="tab in TABS"
       :key="tab.id"

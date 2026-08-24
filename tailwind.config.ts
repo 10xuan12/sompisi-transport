@@ -22,6 +22,13 @@ export default <Partial<Config>>{
         // Single Roboto family for the whole site — hierarchy comes from
         // weight (400-800) and letter-spacing, not from mixing typefaces.
         sans: ['Roboto', 'ui-sans-serif', 'system-ui', 'sans-serif']
+      },
+      transitionTimingFunction: {
+        // Crisp, no-overshoot motion signature for the handful of animated
+        // interactions this design does have (header collapse on scroll).
+        // Set as DEFAULT so every transition-* utility site-wide picks it
+        // up automatically, not just the ones that ask for it by name.
+        DEFAULT: 'cubic-bezier(0.16, 1, 0.3, 1)'
       }
     }
   },

@@ -4,8 +4,10 @@ const activeTab = useActiveTab()
 
 <template>
   <div class="mx-auto min-h-screen max-w-[480px] bg-white shadow-[0_0_60px_rgba(0,0,0,0.1)]">
-    <AppHeader />
-    <TabBar />
+    <div class="sticky top-0 z-30">
+      <AppHeader />
+      <TabBar />
+    </div>
 
     <main class="px-6 pb-24 pt-8">
       <HomeTab v-if="activeTab === 'home'" />

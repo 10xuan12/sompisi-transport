@@ -25,11 +25,7 @@ const TEAM = [
       :key="member.name"
       class="flex gap-4 border-b border-navy/[0.08] py-5"
     >
-      <div
-        class="flex h-[52px] w-[52px] shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#eef0f3] to-[#dfe2e7] text-[8px] font-bold tracking-wide text-navy/35"
-      >
-        PHOTO
-      </div>
+      <AvatarBadge :initials="getInitials(member.name)" :size="52" />
       <div>
         <p class="text-[15px] font-bold text-navy">{{ member.name }}</p>
         <p class="mt-[3px] text-[10.5px] font-extrabold uppercase tracking-wide text-burgundy">
