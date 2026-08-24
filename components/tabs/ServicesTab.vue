@@ -26,7 +26,7 @@ const SERVICES = [
 <template>
   <div>
     <p class="mb-2.5 text-[10px] font-extrabold tracking-[0.16em] text-burgundy">SERVICES</p>
-    <h2 class="mb-1.5 text-xl font-bold text-navy">Three ways we drive you</h2>
+    <h2 class="mb-1.5 text-xl font-bold text-navy">How we drive you</h2>
     <p class="mb-5 text-[13px] font-bold leading-relaxed text-navy/55">
       Every trip is run by the same small team — you'll always know who's coming.
     </p>
